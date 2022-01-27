@@ -217,7 +217,6 @@ body{
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50%;
     grid-gap: 40px;
     
 }
@@ -390,7 +389,7 @@ body{
 @media (min-width: 768px){
     
     .section-card-product{
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -400,7 +399,7 @@ body{
 /* Large devices (desktops, 992px and up) */
  @media (min-width: 992px) { 
     .section-card-product{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
   }
 
