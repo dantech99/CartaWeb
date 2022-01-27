@@ -122,7 +122,7 @@ body{
     text-align: center;
     align-items: center;
     justify-content: center;
-    background-image: url(../img/restaurante.jpg);
+    background-image: url(..\img\restaurante.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
@@ -175,8 +175,6 @@ body{
 
 /* Arriba | Derecha | Abajo | Izquierda */
 /* margin: 2px 1em 0 auto; */
-
-
 
 .section-fill-taks{
     display: flex;
@@ -284,48 +282,9 @@ body{
 
 /* medidas responsive  */
 
+ /* Small devices (landscape phones, 576px and up) */
+
 @media (max-width: 576px) {
-    .section-card-product{
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-
-
-.section-fill-taks span{
-    font-size: 30px;
-    margin-right: 10px;
-    margin-top: 10px;
-}
-.task-link{
-    display: block;
-    text-decoration: none;
-    background: var(--primary-color-btn);
-    padding: 15px;
-    margin: 5px;
-    color: var(--primary-color-twxt);
-    font-size: 15px;
-    border-radius: 8px;
-}
-
-
-.section-header .section-present-title{
-    font-size: 60px;
-    color: var(--primary-color-twxt);
-}
-.section-header .section-present-subtitle{
-    font-size: 40px;
-    color: var(--primary-color-twxt);
-}
-
-.section-fill-title h2{
-    font-size: 40px;
-}
-
- }
-
-
- 
-@media (min-width: 768px){
     .header{
         height: 70px;
     }
@@ -380,6 +339,56 @@ body{
         left: 0;
     }
 
+
+
+
+
+
+
+
+
+    .section-card-product{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+
+.section-fill-taks span{
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.task-link{
+    display: block;
+    text-decoration: none;
+    background: var(--primary-color-btn);
+    padding: 15px;
+    margin: 5px;
+    color: var(--primary-color-twxt);
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+
+.section-header .section-present-title{
+    font-size: 60px;
+    color: var(--primary-color-twxt);
+}
+.section-header .section-present-subtitle{
+    font-size: 40px;
+    color: var(--primary-color-twxt);
+}
+
+.section-fill-title h2{
+    font-size: 40px;
+}
+
+ }
+
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px){
+    
     .section-card-product{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -388,13 +397,15 @@ body{
 
 
 
-
+/* Large devices (desktops, 992px and up) */
  @media (min-width: 992px) { 
     .section-card-product{
         grid-template-columns: repeat(3, 1fr);
     }
   }
 
+
+/*  X-Large devices (large desktops, 1200px and up) */
   @media (min-width: 1200px) { 
     .section-card-product{
         grid-template-columns: repeat(4, 1fr);
