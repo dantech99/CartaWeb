@@ -1,10 +1,20 @@
+<?php 
+
+$title = "Restaurante || Carta"
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante || Carta</title>
+    <title><?php echo $title ?></title>
 
     <!-- estilos css propios -->
     <link rel="stylesheet" href="css/style.css">
@@ -24,6 +34,7 @@
 
 </head>
 <body>
+    <a href="#" class="btn-flotante" id="btnCarrito"><i class='bx bxs-cart'></i><span class="badge bg-success" id="carrito">0</span></a>
 
     <!-- navegacion principal encabezado -->
     <header class="header">
