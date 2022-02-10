@@ -3,11 +3,6 @@
 $title = "Restaurante || Carta"
 
 ?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,7 +204,6 @@ $title = "Restaurante || Carta"
 
     <footer class="footer">
         <div class="foot">
-            <img src="" alt="">
             <h2>Restaurante</h2>
         </div>
         <div class="foot-social">

@@ -1,5 +1,4 @@
 
-    <link rel="stylesheet" href="../css/admin.css">
 
     <!-- google fonst -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -9,3 +8,5 @@
 
     <!-- iconos boxicons  -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../css/admin.css">

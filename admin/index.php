@@ -1,5 +1,6 @@
 <?php
 
+// variables de navegacion
 $home = "active";
 $carta = "";
 $category = "";
@@ -51,8 +52,8 @@ $breadcum = "Home";
                     <li><h3>Info de la Empresa</h3></li>
                 </ul>
                 <div class="about_btn">
-                    <a href="#" class="btn"><i class='bx bx-show'></i> Ver Tienda</a>
-                    <a href="#" class="btn_two"><i class='bx bxs-cog'></i> Configurar Tienda</a>
+                    <a href="../index.php" target="_blank" class="btn_one"><i class='bx bx-show'></i> Ver Tienda</a>
+                    <a href="settings.php" class="btn_two"><i class='bx bxs-cog'></i> Configurar Tienda</a>
                 </div>
             </div>
         </div>

@@ -456,3 +456,32 @@ body{
     }
     }
 
+    /* footer  */
+
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        background: var(--primary-color-nav);
+        height: 100px;
+    }
+
+    .foot{
+        line-height: 100px;
+    }
+    .foot h2{
+        color: #fff;
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .foot-social{
+        line-height:100px;
+        display: flex;
+    }
+    .foot-social a{
+        margin: 0 10px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
