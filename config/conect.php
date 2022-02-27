@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $clave = "";
-$db = "restaurante"
+$db = "restaurante";
 $conexion = mysqli_connect($host, $user, $clave, $bd);
 if (mysqli_connect_error()) {
     echo "conexion fallida con la base de datos";

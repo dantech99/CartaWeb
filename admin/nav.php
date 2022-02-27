@@ -4,10 +4,6 @@
             <h1>Logo</h1>
         </div>
         <div class="sidebar_main">
-            <div class="head_img">
-                <img src="../img/restaurante.jpg" alt="">
-                <h3>Restaurante Antonio</h3>
-            </div>
             <ul class="nav">
                 <li><i class='bx bxs-home'></i> <a class="link <?php echo $home; ?>" href="index.php" >Home</a></li>
                 <li><i class='bx bxs-food-menu' ></i> <a class="link <?php echo $carta ?>" href="carta.php">Carta</a></li>

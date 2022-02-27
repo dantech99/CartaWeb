@@ -4,19 +4,19 @@
 $home = "";
 $carta = "";
 $category = "active";
-$setings = "";
-$title = "Dashboard - Category";
 $breadcum = "Category";
+$title = "Dashboard - Category"
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'head.php' ?>
-    <title><?php $title ?></title>
+
+    <title><?php echo $title ?></title>
 </head>
 <body>
     <?php  include 'nav.php' ?>
@@ -28,7 +28,8 @@ $breadcum = "Category";
 
     <div class="tbl_poster">
                 <div class="tbl_btn">
-                    <a href="#" class="btn"><i class='bx bx-plus'></i> Agregar</a>
+                    <?php include ('popus/category.html') ?>
+                    <a href="#" class="btn" id="btnModal"><i class='bx bx-plus'></i> Agregar</a>
                 </div>
             </div>
         <div class="container_tbl">
@@ -70,6 +71,8 @@ $breadcum = "Category";
             </table>
         </div>
     </div>
+
+    <script src="../assets/js/modal.js"></script>
     
 </body>
 </html>

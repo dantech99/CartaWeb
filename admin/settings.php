@@ -16,7 +16,7 @@ $breadcum = "Settings";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'head.php' ?>
-    <title><?php $title ?></title>
+    <title><?php echo $title ?></title>
 </head>
 <body>
     <?php include 'nav.php' ?>
@@ -41,7 +41,8 @@ $breadcum = "Settings";
     <div class="factory">
         <div class="factory_header">
             <h1>Datos de Le empresa</h1>
-            <a href="#" class="factory_btn">Editar</a>
+            <?php include ('popus/settings.html') ?>
+            <a href="#" class="factory_btn" id="btnModal">Editar</a>
         </div>
 
         <div class="factory_body">
@@ -54,7 +55,7 @@ $breadcum = "Settings";
                 <div class="divider"></div>
             </div>
             <div class="factory_body_img">
-                <img src="../img/restaurante.jpg" alt="">
+                <img src="../assets/img/restaurante.jpg" alt="">
             </div>
 
             <!-- nombre o tilulo de la empresa -->
@@ -87,7 +88,6 @@ $breadcum = "Settings";
 
         <div class="factory_header">
             <h1>Datos de la Web</h1>
-            <a href="#" class="factory_btn">Editar</a>
         </div>
 
         <div class="factory_body">
@@ -99,7 +99,7 @@ $breadcum = "Settings";
                 <div class="divider"></div>
             </div>
             <div class="factory_body_img">
-                <img src="../img/restaurante.jpg" alt="">
+                <img src="../assets/img/restaurante.jpg" alt="">
             </div>
 
 
@@ -129,6 +129,8 @@ $breadcum = "Settings";
 
 
     </div>
+
+    <script src="../assets/js/modal.js"></script>
     
 </body>
 </html>

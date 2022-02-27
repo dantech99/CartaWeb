@@ -1,16 +1,14 @@
-<?php 
-
+<?php
 // variables de control
 $home = "";
 $carta = "active";
 $category = "";
 $title = "Dashboard - carta";
 $breadcum = "Carta";
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,13 +26,12 @@ $breadcum = "Carta";
 
         <div class="tbl_poster">
                 <div class="tbl_btn">
-                    <a href="#" class="btn"><i class='bx bx-plus'></i> Agregar</a>
+                <a href="#" class="btn" id="btnModal">Abrir Modal</a>
+                <?php include ('popus/modal.html') ?>
                 </div>
-            </div>
-        <div class="container_tbl">
-           
+        </div>
+        <div class="container_tbl">   
             <!-- tabla  -->
-            
             <table>
                 <thead>
                     <tr>
@@ -49,7 +46,7 @@ $breadcum = "Carta";
                 </thead>
                 <tbody>
                     <tr>
-                        <td><img src="../img/hamburguesa1.png" alt="" class="img-post"></td>
+                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
                         <td>Producto</td>
                         <td> la descripion del producto en espesifico</td>
                         <td>15.000</td>
@@ -61,7 +58,7 @@ $breadcum = "Carta";
                          </td>
                     </tr>
                     <tr>
-                        <td><img src="../img/hamburguesa1.png" alt="" class="img-post"></td>
+                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
                         <td>Producto</td>
                         <td>la descripion del producto en espesifico</td>
                         <td>15.000</td>
@@ -73,7 +70,7 @@ $breadcum = "Carta";
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="../img/hamburguesa1.png" alt="" class="img-post"></td>
+                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
                         <td>Producto</td>
                         <td>la descripion del producto en espesifico</td>
                         <td>15.000</td>
@@ -85,7 +82,7 @@ $breadcum = "Carta";
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="../img/hamburguesa1.png" alt="" class="img-post"></td>
+                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
                         <td>Producto</td>
                         <td>la descripion del producto en espesifico</td>
                         <td>15.000</td>
@@ -97,7 +94,7 @@ $breadcum = "Carta";
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="../img/hamburguesa1.png" alt="" class="img-post"></td>
+                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
                         <td>Producto</td>
                         <td>la descripion del producto en espesifico</td>
                         <td>15.000</td>
@@ -112,7 +109,7 @@ $breadcum = "Carta";
                 </tbody>
             </table>
         </div>
-
     </div>
+  <script src="../assets/js/modal.js"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@ $title = "Restaurante || Carta"
     <title><?php echo $title ?></title>
 
     <!-- estilos css propios -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/scss/client/main.css">
 
     <!-- google fonst -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,12 +24,11 @@ $title = "Restaurante || Carta"
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- script js -->
-    <script src="js/index.js" defer></script>
+    <script src="assets/js/index.js" defer></script>
 
 
 </head>
 <body>
-    <a href="#" class="btn-flotante" id="btnCarrito"><i class='bx bxs-cart'></i><span class="badge bg-success" id="carrito">0</span></a>
 
     <!-- navegacion principal encabezado -->
     <header class="header">
@@ -39,6 +38,7 @@ $title = "Restaurante || Carta"
            <ul class="menu">
                <li class="menu-item"><a href="#"><i class='bx bxs-food-menu' ></i> Ver Carta</a></li>
                <li class="menu-item"><a href="#"><i class='bx bxs-contact'></i> Contacto</a></li>
+               <li class="menu-item"><a href="#" id="btnCar"><i class='bx bxs-cart'></i><span class="badge bg-success" id="carrito">0</span></a></li>
            </ul>
         </nav>
     </header>
@@ -75,7 +75,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/fondo.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -91,7 +91,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -107,7 +107,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -123,7 +123,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -139,7 +139,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -155,7 +155,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -171,7 +171,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>
@@ -187,7 +187,7 @@ $title = "Restaurante || Carta"
         <div class="section-card">
             <div class="card">
                 <div class="card-img">
-                    <img src="img/pizzas.jpg" alt="">
+                    <img src="assets/img/pizzas.jpg" alt="">
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title">Hamburguesas</h2>

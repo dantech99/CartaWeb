@@ -43,7 +43,7 @@ $breadcum = "Home";
         <!-- section empresa -->
         <div class="section_about">
             <div class="about_img">
-                <img src="../img/restaurante.jpg" alt="restaurante">
+                <img src="../assets/img/restaurante.jpg" alt="restaurante">
             </div>
             <div class="about_info">
                 <ul>

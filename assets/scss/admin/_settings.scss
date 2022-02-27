@@ -1,0 +1,57 @@
+/* estilos pagina de configuracion del sitio */
+.divider{
+    height: 1px;
+    background: rgb(66, 66, 66);
+    width: 50%;
+}
+.factory{
+    width: 100%;
+    
+}
+
+.factory_header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgb(148, 146, 146);
+}
+.factory_header h1,
+.factory_header .factory_btn{
+    line-height: 50px;
+    margin: 0 20px;
+    color: black ;
+}
+.factory_btn{
+    padding: 5px;
+    
+}
+
+.factory_body{
+    margin: 20px;
+}
+
+.factory_body_title{
+    width: 100%;
+    height: 40px;
+}
+.factory_body_title h3{
+   color: blue;
+}
+.factory_body_img{
+    width: 100%;
+    height: 200px;
+    margin: 20px 0;
+}
+.factory_body_img img{
+    height: 100%;
+}
+
+.factory_body_content{
+    width: 100%;
+    height: 40px;
+}
+.factory_body_content h4{
+    font-size: 20px;
+}
