@@ -1,52 +1,433 @@
-/*
-Error: File to import not found or unreadable: modal.
-       Load path: C:/XAMPP/htdocs/CartaRestaurante/assets/scss/client
-        on line 7 of C:\XAMPP\htdocs\CartaRestaurante\assets\scss\client\main.scss
+@charset "UTF-8";
+/* variables de color */
+:root {
+  --primary-color-nav: #431212;
+  --primary-color-twxt: #fff;
+  --primary-color-btn: #431212; }
 
-2: @import 'base';
-3: @import 'nav';
-4: @import 'cards';
-5: @import 'queries';
-6: @import 'forms';
-7: @import 'modal';
+/* normalice */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
 
-Backtrace:
-C:\XAMPP\htdocs\CartaRestaurante\assets\scss\client\main.scss:7
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:45:in `import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:314:in `visit_import'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `block in with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:79:in `with_base'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:162:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:161:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:10:in `visit'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
-C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
-C:/Program Files (x86)/Koala/bin/sass:22:in `load'
-C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: modal.\A        Load path: C:/XAMPP/htdocs/CartaRestaurante/assets/scss/client\A         on line 7 of C:\XAMPP\htdocs\CartaRestaurante\assets\scss\client\main.scss\A \A 2: @import 'base';\A 3: @import 'nav';\A 4: @import 'cards';\A 5: @import 'queries';\A 6: @import 'forms';\A 7: @import 'modal';"; }
+body {
+  font-family: 'Work Sans', sans-serif; }
+
+.main {
+  margin: 0 50px 0 50px; }
+
+/* estilos para el header y la navegacion */
+.header {
+  display: block;
+  width: 100%;
+  height: 70px;
+  background: var(--primary-color-nav);
+  top: 0;
+  left: 0; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 1200px; }
+
+.logo {
+  color: var(--primary-color-twxt);
+  font-size: 40px;
+  line-height: 60px;
+  text-decoration: none; }
+
+.bx-store-alt {
+  font-size: 45px; }
+
+.menu {
+  display: flex;
+  list-style: none; }
+
+.menu-item {
+  font-size: 30px;
+  margin: 0 10px;
+  line-height: 70px;
+  width: max-content; }
+
+.menu-item a {
+  text-decoration: none;
+  color: var(--primary-color-twxt);
+  padding: 20px 10px; }
+
+.menu-item a:hover {
+  background: #eb5c5c; }
+
+.item-social {
+  margin: 0 10px;
+  line-height: 75px;
+  width: max-content; }
+
+.item-social a {
+  text-decoration: none;
+  color: var(--primary-color-twxt);
+  padding: 20px 10px;
+  font-size: 30px; }
+
+.item-social a:hover {
+  background: #eb5c5c;
+  transition: 0.3s; }
+
+.toggle {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none; }
+
+.toggle .bx-menu {
+  font-size: 35px;
+  color: var(--primary-color-twxt); }
+
+/* estilos seccion de presentacion */
+.section-header {
+  width: 100%;
+  height: 540px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../../../img/restaurante.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+  z-index: 1; }
+
+.section-header::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #070606;
+  opacity: 0.7;
+  z-index: -5; }
+
+.section-header .section-present-title {
+  font-size: 80px;
+  color: var(--primary-color-twxt); }
+
+.section-header .section-present-subtitle {
+  font-size: 50px;
+  color: var(--primary-color-twxt); }
+
+/* estilos seccion section-fill */
+.section-fill {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 100px; }
+
+.section-fill-title {
+  text-align: center;
+  margin: 50px; }
+
+.section-fill-title h2 {
+  font-size: 50px; }
+
+/* Arriba | Derecha | Abajo | Izquierda */
+/* margin: 2px 1em 0 auto; */
+.section-fill-taks {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap; }
+
+.task {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  flex-wrap: wrap; }
+
+.section-fill-taks span {
+  font-size: 30px;
+  margin-right: 10px;
+  margin-top: 10px; }
+
+.task-link {
+  display: block;
+  text-decoration: none;
+  background: var(--primary-color-btn);
+  padding: 15px;
+  margin: 5px;
+  color: var(--primary-color-twxt);
+  font-size: 15px;
+  border-radius: 8px; }
+
+.task-link:hover {
+  background: #eb5c5c; }
+
+/* seccion de las tarjetas */
+.section-card-product {
+  background: #f0e9e9;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px; }
+
+/* cards */
+.section-card {
+  width: 100%;
+  height: 370px;
+  border-radius: 20px; }
+
+.card {
+  height: 100%;
+  width: 100%;
+  background: #fff; }
+
+.card-img {
+  width: 100%;
+  height: 200px; }
+
+.card-img img {
+  width: 100%;
+  height: 100%; }
+
+.card-body {
+  padding: 10px; }
+
+.card-price {
+  display: block;
+  font-size: 20px;
+  margin-top: 10px; }
+
+.card-btn {
+  display: flex;
+  padding: 10px;
+  margin: 10px; }
+
+.card-btn .btn {
+  border: none;
+  background: var(--primary-color-btn);
+  padding: 15px;
+  margin: 0 5px 0 5px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 400; }
+
+.card-btn .btn:hover {
+  background: #eb5c5c; }
+
+/* medidas responsive  */
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .header {
+    height: 70px; }
+
+  .logo {
+    font-size: 30px;
+    line-height: 70px;
+    margin-left: 10px; }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 20px;
+    background-color: var(--primary-color-nav);
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    padding: 20px 0;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    left: 100%;
+    transition: left 0.3s;
+    z-index: 2; }
+
+  .menu-item {
+    line-height: 70px;
+    display: block;
+    width: 100%; }
+
+  .menu-item a:hover {
+    background: none; }
+
+  .menu-item:hover {
+    background: #eb5c5c; }
+
+  .toggle {
+    display: block;
+    margin-right: 10px; }
+
+  .menu-item_visible {
+    left: 0; }
+
+  .section-card-product {
+    grid-template-columns: repeat(2, 1fr); }
+
+  .section-fill-taks span {
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: 10px; }
+
+  .task-link {
+    display: block;
+    text-decoration: none;
+    background: var(--primary-color-btn);
+    padding: 15px;
+    margin: 5px;
+    color: var(--primary-color-twxt);
+    font-size: 15px;
+    border-radius: 8px; }
+
+  .section-header .section-present-title {
+    font-size: 60px;
+    color: var(--primary-color-twxt); }
+
+  .section-header .section-present-subtitle {
+    font-size: 40px;
+    color: var(--primary-color-twxt); }
+
+  .section-fill-title h2 {
+    font-size: 40px; } }
+@media (max-width: 400px) {
+  .section-card-product {
+    grid-template-columns: repeat(1, 1fr); } }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .section-card-product {
+    grid-template-columns: repeat(3, 1fr); } }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .section-card-product {
+    grid-template-columns: repeat(4, 1fr); } }
+/*  X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .section-card-product {
+    grid-template-columns: repeat(4, 1fr); } }
+/* boton flotante carrito */
+.btn-flotante {
+  font-size: 20px;
+  /* Cambiar el tamaño de la tipografia */
+  font-weight: bold;
+  /* Fuente en negrita o bold */
+  color: #ffffff;
+  /* Color del texto */
+  border-radius: 5px;
+  /* Borde del boton */
+  letter-spacing: 2px;
+  /* Espacio entre letras */
+  background-color: var(--primary-color-btn);
+  /* Color de fondo */
+  padding: 18px 30px;
+  /* Relleno del boton */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  transition: all 300ms ease 0ms;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  text-decoration: none;
+  display: flex; }
+
+.btn-flotante:hover {
+  background-color: #f70743;
+  transform: translateY(-7px); }
+
+.bxs-cart {
+  font-size: 40px; }
+
+@media only screen and (max-width: 600px) {
+  .btn-flotante {
+    font-size: 14px;
+    padding: 12px 20px;
+    bottom: 20px;
+    right: 20px; } }
+/* footer  */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: var(--primary-color-nav);
+  height: 100px; }
+
+.foot {
+  line-height: 100px; }
+
+.foot h2 {
+  color: #fff;
+  font-size: 30px;
+  margin-left: 20px; }
+
+.foot-social {
+  line-height: 100px;
+  display: flex; }
+
+.foot-social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 20px; }
+
+.file-input {
+  padding: 15px;
+  background: #ffffff;
+  width: 100%;
+  border: 1px solid #bbb7b7; }
+
+.file-input::-webkit-file-upload-button {
+  display: none; }
+
+.forms-content {
+  border-radius: 5px;
+  width: 40%;
+  height: 90%;
+  background: #fff; }
+
+form {
+  padding: 20px; }
+
+form label {
+  margin: 10px 0;
+  font-size: 20px; }
+
+.form-flex {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between; }
+
+.form-flex-one {
+  display: flex;
+  flex-direction: column; }
+
+.form-flex-two {
+  display: flex;
+  flex-direction: column; }
+
+.select-input {
+  padding: 20px;
+  width: 100%;
+  height: 10px; }
+
+.select-input option {
+  background: wheat;
+  padding: 10px; }
+
+.form-text {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0; }
+
+.form-text input[type="text"] {
+  padding: 10px;
+  height: 20px;
+  border: none;
+  background: #ebe8e8;
+  outline: none; }
+
+.form-text textarea {
+  padding: 5px;
+  height: 100px;
+  resize: none; }
+
+/*# sourceMappingURL=main.css.map */

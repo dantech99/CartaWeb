@@ -5,6 +5,35 @@ $carta = "active";
 $category = "";
 $title = "Dashboard - carta";
 $breadcum = "Carta";
+
+#require conexion of database
+
+require_once "../config/conect.php";
+
+#collection of data
+
+if (isset($_POS)) {
+    if (!empty($_POST)) {
+        $nombreP = $_POST['nombreP'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $category = $_POST['categorias'];
+        $imagen = $_FILES['imgTumbnail'];
+        $name = $imagen['name'];
+        $tmpname = $imagen['tmp_name'];
+        $fecha = date("YmdHis");
+        $img = $fecha . ".jpg";
+        $destino = "../assets/img" . $img;
+
+        $query = mysql_query($conexion, "INSERT INTO productos (nombreP, descripcion, precio, category, imagen, id_categorias) VALUES ('$nombreP', '$descripcion', '$precio', '$category', '$img')");
+        if ($query) {
+            if (move_upluaded_file($tmpname, $destino)) {
+                header('Location: carta.php');
+            }
+        }
+        
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +56,7 @@ $breadcum = "Carta";
         <div class="tbl_poster">
                 <div class="tbl_btn">
                 <a href="#" class="btn" id="btnModal">Abrir Modal</a>
-                <?php include ('popus/modal.html') ?>
+                <?php include ('popus/Add.html') ?>
                 </div>
         </div>
         <div class="container_tbl">   
@@ -57,55 +86,6 @@ $breadcum = "Carta";
                             <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
                          </td>
                     </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    
                 </tbody>
             </table>
         </div>
