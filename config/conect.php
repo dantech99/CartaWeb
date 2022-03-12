@@ -4,7 +4,7 @@ $host = "localhost";
 $user = "root";
 $clave = "";
 $db = "restaurante";
-$conexion = mysqli_connect($host, $user, $clave, $bd);
+$conexion = mysqli_connect($host, $user, $clave, $db);
 if (mysqli_connect_error()) {
     echo "conexion fallida con la base de datos";
     exit();

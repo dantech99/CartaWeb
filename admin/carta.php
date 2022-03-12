@@ -57,59 +57,61 @@ $breadcum = "Carta";
                             <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
                          </td>
                     </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td>la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
-                        <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
-                        </td>
-                    </tr>
-                    
                 </tbody>
             </table>
         </div>
     </div>
+
+      <!-- vetana modal para agregar productos -->
+    
+<div id="myModal" class="modalContainer">
+    <div class="modal-content">
+        <span class="close">x</span>
+        <h2>Mi modal</h2>
+
+         <div class="forms-content">
+
+            <form action="">
+                <div class="form-flex">
+                <div class="form-flex-one">
+                    <label for="file-2">Imagen</label>
+                    <input type="file" name="" id="" class="file-input">
+                </div>
+
+                    <div class="form-flex-two">
+                        <label for="categorias">Categorias</label>
+                        <select name="categorias" id="categorias" class="select-input" aria-placeholder="opciones">
+                            <option value="">opcion 1</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="form-text">
+                    <label for="nombre">Nombre del producto</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+
+                <div class="form-text">
+                    <label for="descripcion">Descripcion</label>
+                    <textarea name="descripcion" id="descripcion" placeholder="Descripcion del producto"></textarea>
+                </div>
+                <div class="form-text">
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio">
+                </div>
+                <div class="form-btn">
+                    <a href="#">Publicar</a>
+                    <a href="#">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
   <script src="../assets/js/modal.js"></script>
 </body>
 </html>

@@ -33,7 +33,7 @@ $title = "Restaurante || Carta"
     <!-- navegacion principal encabezado -->
     <header class="header">
         <nav class="nav">
-           <a href="#" class="logo">Logo</a>
+           <a href="admin/index.php" class="logo">Logo</a>
            <button class="toggle"><i class='bx bx-menu'></i></button>
            <ul class="menu">
                <li class="menu-item"><a href="#"><i class='bx bxs-food-menu' ></i> Ver Carta</a></li>
