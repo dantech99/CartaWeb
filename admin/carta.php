@@ -5,6 +5,34 @@ $carta = "active";
 $category = "";
 $title = "Dashboard - carta";
 $breadcum = "Carta";
+
+require_once "../config/conect.php";
+
+if (isset($_POST)) {
+    if (!empty($_POST)) {
+        $nombre = $_POST['nombre_p'];
+        $descripcion = $_POST['descripcion'];
+        $precio = $_POST['precio'];
+        $categoria = $_POST['categoria'];
+        $imagen = $_FILES['imagen'];
+        $name = $imagen['name'];
+        $tmpname = $imagen['tmp_name'];
+        $fecha = date("YmdHis");
+        $foto = $fecha . ".jpg";
+        $destino = "../assets/img/" . $foto;
+
+        $query = mysqli_query($conexion, "INSERT INTO productos(nombre_p, descripcion, precio, imagen, id_categoria) VALUES ('$nombre', '$descripcion', '$precio', '$foto', $categoria)");
+
+        if ($query) {
+            if (move_uploaded_file($tmpname, $destino)) {
+                echo'<script type="text/javascript">
+                alert("registro guardado");
+                window.location.href="carta.php";
+                </script>';
+            }
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +54,7 @@ $breadcum = "Carta";
 
         <div class="tbl_poster">
                 <div class="tbl_btn">
-                <a href="#" class="btn" id="btnModal">Abrir Modal</a>
-                <?php include ('popus/modal.html') ?>
+                <a href="#" class="btn" id="btnModal"><i class='bx bx-plus'></i> Agregar</a>
                 </div>
         </div>
         <div class="container_tbl">   
@@ -35,29 +62,36 @@ $breadcum = "Carta";
             <table>
                 <thead>
                     <tr>
-                        <th scope="col">Imagen</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Describcion</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">cantidad</th>
-                        <th scope="col">Categorias</th>
+                        <th>Imagen</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Categorias</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php 
+                    $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.nombre_c FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria ORDER BY p.id DESC");
+
+                    while($data = mysqli_fetch_assoc($query)) {
+                    ?>
                     <tr>
-                        <td><img src="../assets/img/hamburguesa1.png" alt="" class="img-post"></td>
-                        <td>Producto</td>
-                        <td> la descripion del producto en espesifico</td>
-                        <td>15.000</td>
-                        <td>200</td>
-                        <td>categorias</td>
+                        <td><img src="../assets/img/<?php echo $data['imagen']; ?>" alt="imagen del producto" class="img-post"></td>
+                        <td><?php echo $data['nombre_p']; ?></td>
+                        <td><?php echo $data['descripcion']; ?></td>
+                        <td><?php echo $data['precio']; ?></td>
+                        <td><?php echo $data['nombre_c']; ?></td>
                         <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
+                            <form method="post" action="eliminar.php?accion=pro&id=<?php echo $data['id']; ?>">
+                            <button type="submit" class="action"><i class='bx bxs-trash-alt'></i></button>
+                            <a href="#" class="action"></a>
+                            </form>
                          </td>
                     </tr>
+                    <?php } ?>
                 </tbody>
+               
             </table>
         </div>
     </div>
@@ -67,51 +101,54 @@ $breadcum = "Carta";
 <div id="myModal" class="modalContainer">
     <div class="modal-content">
         <span class="close">x</span>
-        <h2>Mi modal</h2>
+        <h2>Agregar Productos</h2>
 
          <div class="forms-content">
 
-            <form action="">
-                <div class="form-flex">
-                <div class="form-flex-one">
-                    <label for="file-2">Imagen</label>
-                    <input type="file" name="" id="" class="file-input">
-                </div>
-
-                    <div class="form-flex-two">
-                        <label for="categorias">Categorias</label>
-                        <select name="categorias" id="categorias" class="select-input" aria-placeholder="opciones">
-                            <option value="">opcion 1</option>
-                        </select>
-                    </div>
-                </div>
-
-
-
-
-
+            <form action="" method="POST" enctype="multipart/form-data">
+            
                 <div class="form-text">
                     <label for="nombre">Nombre del producto</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <input type="text" name="nombre_p" id="nombre_p" required>
                 </div>
 
 
                 <div class="form-text">
                     <label for="descripcion">Descripcion</label>
-                    <textarea name="descripcion" id="descripcion" placeholder="Descripcion del producto"></textarea>
+                    <textarea name="descripcion" id="mytextarea" placeholder="Descripcion del producto" required></textarea>
                 </div>
                 <div class="form-text">
                     <label for="precio">Precio</label>
-                    <input type="number" name="precio">
+                    <input type="text" name="precio" id="precio" required>
+                </div>
+
+                <div class="form-flex">
+                <div class="form-flex-one">
+                    <label for="file-2">Imagen</label>
+                    <input type="file" name="imagen" id="imagen" class="file-input" required>
+                </div>
+
+                    <div class="form-flex-two">
+                        <label for="categorias">Categorias</label>
+                        <select name="categoria" id="categoria" class="select-input" required>
+                            <?php 
+                                $categorias = mysqli_query($conexion, "SELECT * FROM categorias");
+                                foreach ($categorias as $cat) {?>
+                            <option value="<?php echo $cat['id']; ?>"><?php echo $cat['nombre_c']; ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-btn">
-                    <a href="#">Publicar</a>
-                    <a href="#">Cancelar</a>
+                    <button type="submit">Registrar</button>
+                    <button onclick="window.location.href='carta.php'">cerrar</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
   <script src="../assets/js/modal.js"></script>
+ 
+
 </body>
 </html>

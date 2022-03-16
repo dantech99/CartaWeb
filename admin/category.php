@@ -13,11 +13,14 @@ require_once "../config/conect.php";
 
 if (isset($_POST)) {
     if (!empty($_POST)) {
-        $nombre = $_POST['nombrec'];
-        $query = mysqli_query($conexion, "INSERT INTO categoria(nombrec) VALUES ('$nombre')");
+        $nombre = $_POST['nombre_c'];
+        $query = mysqli_query($conexion, "INSERT INTO categorias(nombre_c) VALUES ('$nombre')");
         if ($query) {
             // echo '<script> alert("dato ingresado")</script>';
-            header('Location: category.php');
+            echo'<script type="text/javascript">
+            alert("registro guardado");
+            window.location.href="category.php";
+            </script>';
         }
     }
 }
@@ -56,22 +59,23 @@ if (isset($_POST)) {
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nombre</th>
+                        <th scope="col">nombre de la categoria</th>
                         <th scope="col">acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $query = mysqli_query($conexion, "SELECT * FROM categoria ORDER BY id DESC");
+                    $query = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY id ASC");
                     while ($data = mysqli_fetch_assoc($query))
                     {
                     ?>
                     <tr>
                         <td><?php echo $data['id']; ?></td>
-                        <td><?php echo $data['nombrec']; ?></td>
+                        <td><?php echo $data['nombre_c']; ?></td>
                         <td>
-                            <a href="#" class="action"><i class='bx bxs-edit-alt'></i></a>
-                            <a href="#" class="action"><i class='bx bxs-trash-alt'></i></a>
+                            <form method="post" action="eliminar.php?accion=cli&id=<?php echo $data['id']; ?>">
+                            <button type="submit" class="action"><i class='bx bxs-trash-alt'></i></a>
+                            </form>
                          </td>
                     </tr>
                    

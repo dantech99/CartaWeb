@@ -43,14 +43,24 @@ $breadcum = "Home";
         <!-- section empresa -->
         <div class="section_about">
             <div class="about_img">
-                <img src="../assets/img/restaurante.jpg" alt="restaurante">
+                <?php
+                    require_once "../config/conect.php";
+                    $query = mysqli_query($conexion, "SELECT * FROM configuracion ORDER BY id DESC");
+                    $data = mysqli_fetch_assoc($query);
+
+                    if ($query) {
+                     
+                 ?>
+                <img src="../assets/img/<?php echo $data['imagen_dash']; ?>" alt="restaurante">
+               
             </div>
             <div class="about_info">
                 <ul>
-                    <li> <h1>Nombre de la Empresa</h1></li>
-                    <li><h3>Propietario de la Empresa</h3></li>
-                    <li><h3>Info de la Empresa</h3></li>
+                    <li> <h1><?php echo  $data['nombre_e']; ?></h1></li>
+                    <li><h3><?php echo  $data['propietario']; ?></h3></li>
+                    <li><h3><?php echo  $data['descripcion']; ?></h3></li>
                 </ul>
+                <?php  } ?>
                 <div class="about_btn">
                     <a href="../index.php" target="_blank" class="btn_one"><i class='bx bx-show'></i> Ver Tienda</a>
                     <a href="settings.php" class="btn_two"><i class='bx bxs-cog'></i> Configurar Tienda</a>

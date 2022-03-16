@@ -263,7 +263,8 @@ tbody td .img-post {
 
 tbody td .action {
   font-size: 30px;
-  text-decoration: none;
+  border: none;
+  background: none;
   color: black; }
 
 tbody td .action .bxs-edit-alt:hover {
@@ -321,7 +322,7 @@ tbody tr:nth-child(odd) {
 
 .factory_body_content {
   width: 100%;
-  height: 40px; }
+  height: 100px; }
 
 .factory_body_content h4 {
   font-size: 20px; }
@@ -358,13 +359,11 @@ form label {
   flex-direction: column; }
 
 .select-input {
-  padding: 20px;
-  width: 100%;
-  height: 10px; }
+  padding: 10px;
+  width: 100%; }
 
-.select-input option {
-  background: wheat;
-  padding: 10px; }
+option {
+  padding: 20px; }
 
 .form-text {
   display: flex;
@@ -388,17 +387,23 @@ input[type="number"] {
 .form-text textarea {
   padding: 5px;
   height: 100px;
-  resize: none; }
+  resize: none;
+  font-family: 'Work Sans', sans-serif; }
 
 .form-btn {
   display: flex;
   justify-content: center; }
 
-.form-btn a {
-  padding: 10px;
+.form-btn button {
+  padding: 15px;
   background: blue;
-  color: white;
-  text-decoration: none;
-  margin: 0 10px; }
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  margin: 0 10px;
+  cursor: pointer; }
+
+button:hover {
+  background: #01015a; }
 
 /*# sourceMappingURL=main.css.map */
