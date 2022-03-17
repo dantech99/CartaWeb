@@ -1,6 +1,7 @@
 <?php 
 
-$title = "Restaurante || Carta"
+$title = "Restaurante || Carta";
+require_once "config/conect.php";
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +25,7 @@ $title = "Restaurante || Carta"
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- script js -->
+    <script src="assets/js/index.js" defer></script> 
     <script src="assets/js/index.js" defer></script>
 
 
@@ -32,8 +34,15 @@ $title = "Restaurante || Carta"
 
     <!-- navegacion principal encabezado -->
     <header class="header">
+    <?php 
+            $query = mysqli_query($conexion, "SELECT * FROM configuracion ORDER BY id DESC");
+            $data = mysqli_fetch_assoc($query);
+            if ($query) {
+                
+            
+            ?>
         <nav class="nav">
-           <a href="admin/index.php" class="logo">Logo</a>
+           <a href="admin/index.php" class="logo"><?php echo $data['nombre_e']; ?></a>
            <button class="toggle"><i class='bx bx-menu'></i></button>
            <ul class="menu">
                <li class="menu-item"><a href="#"><i class='bx bxs-food-menu' ></i> Ver Carta</a></li>
@@ -46,8 +55,9 @@ $title = "Restaurante || Carta"
 
     <section class="section-header">
         <div class="section-present">
-            <h1 class="section-present-title">Restaurante Antonio</h1>
-            <h4 class="section-present-subtitle">Mira nuestra carta</h4>
+            <h1 class="section-present-title"><?php echo $data['nombreweb']; ?></h1>
+            <h4 class="section-present-subtitle"><?php echo $data['info_web']; ?></h4>
+            <?php  }?>
         </div>
     </section>
 
@@ -59,27 +69,37 @@ $title = "Restaurante || Carta"
         <div class="section-fill-taks">
             <span>Categorias</span>
             <div class="task">
-                <a href="#" class="task-link">Hamburguesas</a>
-                <a href="#" class="task-link">Hamburguesas</a>
-                <a href="#" class="task-link">Hamburguesas</a>
-                <a href="#" class="task-link">Hamburguesas</a>
-                <a href="#" class="task-link">Hamburguesas</a>
-                <a href="#" class="task-link">Hamburguesas</a>
+                <a href="#" class="task-link">Todos</a>
+                <?php 
+                    $query = mysqli_query($conexion, "SELECT * FROM categorias");
+                    while($data = mysqli_fetch_assoc($query))
+                    {
+                ?>
+                <a href="#" class="task-link"><?php echo $data['nombre_c']; ?></a>
+                <?php }?>
             </div>
         </div>
     </section>
 
     <section class="section-card-product">
 
+        <?php
+        $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.nombre_c FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria LIMIT 8");
+
+        $result = mysqli_num_rows($query);
+        if ($result > 0) {
+            while ($data = mysqli_fetch_assoc($query)) {
         
-        <div class="section-card">
+        ?>
+        <div class="section-card" categoria="<?php
+        echo $data['nombre_c']; ?>">
             <div class="card">
                 <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
+                    <img src="assets/img/<?php echo $data['imagen']; ?>" alt="">
                 </div>
                 <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
+                    <h2 class="card-body-title"><?php echo $data['nombre_p']; ?></h2>
+                    <span class="card-price"><?php echo $data['precio']; ?></span>
                 </div>
                 <div class="card-btn">
                     <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
@@ -87,119 +107,12 @@ $title = "Restaurante || Carta"
                 </div>
             </div>
         </div>
+        <?php } }else {
+            echo "no hay nada aqui aun";
+        }?>
 
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-card">
-            <div class="card">
-                <div class="card-img">
-                    <img src="assets/img/pizzas.jpg" alt="">
-                </div>
-                <div class="card-body">
-                    <h2 class="card-body-title">Hamburguesas</h2>
-                   <span class="card-price">$15.000</span>
-                </div>
-                <div class="card-btn">
-                    <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
-                    <a href="#" class="card-btn-link"><button class="btn">Detalles</button></a>
-                </div>
-            </div>
-        </div>
     </section>
+
 
 
     <footer class="footer">
@@ -211,6 +124,5 @@ $title = "Restaurante || Carta"
             <a href="">WhatsApp</a>
         </div>
     </footer>
-    
 </body>
 </html>
