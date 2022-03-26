@@ -45,7 +45,7 @@ require_once "config/conect.php";
            <a href="admin/index.php" class="logo"><?php echo $data['nombre_e']; ?></a>
            <button class="toggle"><i class='bx bx-menu'></i></button>
            <ul class="menu">
-               <li class="menu-item"><a href="#"><i class='bx bxs-food-menu' ></i> Ver Carta</a></li>
+               <li class="menu-item"><a href="index.php#carta"><i class='bx bxs-food-menu' ></i> Ver Carta</a></li>
                <li class="menu-item"><a href="#"><i class='bx bxs-contact'></i> Contacto</a></li>
                <li class="menu-item"><a href="#" id="btnCar"><i class='bx bxs-cart'></i><span class="badge bg-success" id="carrito">0</span></a></li>
            </ul>
@@ -63,35 +63,35 @@ require_once "config/conect.php";
 
     <section class="section-fill">
         <div class="section-fill-title">
-            <h2>Nuestra Carta</h2>
+            <h2 id="carta">Nuestra Carta</h2>
         </div>
 
-        <div class="section-fill-taks">
+        <!-- <div class="section-fill-taks">
             <span>Categorias</span>
             <div class="task">
                 <a href="#" class="task-link">Todos</a>
                 <?php 
-                    $query = mysqli_query($conexion, "SELECT * FROM categorias");
-                    while($data = mysqli_fetch_assoc($query))
-                    {
+                    // $query = mysqli_query($conexion, "SELECT * FROM categorias");
+                    // while($data = mysqli_fetch_assoc($query))
+                    // {
                 ?>
-                <a href="#" class="task-link"><?php echo $data['nombre_c']; ?></a>
-                <?php }?>
+                <a href="#" class="task-link"  category="<?php //echo $data['nombre_c']; ?> "><?php //echo $data['nombre_c']; ?></a>
+                <?php //}?>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="section-card-product">
 
         <?php
-        $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.nombre_c FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria LIMIT 8");
+        $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.nombre_c FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria LIMIT 12");
 
         $result = mysqli_num_rows($query);
         if ($result > 0) {
             while ($data = mysqli_fetch_assoc($query)) {
         
         ?>
-        <div class="section-card" categoria="<?php
+        <div class="section-card productos" categoria="<?php
         echo $data['nombre_c']; ?>">
             <div class="card">
                 <div class="card-img">
@@ -99,7 +99,7 @@ require_once "config/conect.php";
                 </div>
                 <div class="card-body">
                     <h2 class="card-body-title"><?php echo $data['nombre_p']; ?></h2>
-                    <span class="card-price"><?php echo $data['precio']; ?></span>
+                    <span class="card-price">$<?php echo  $data['precio']; ?></span>
                 </div>
                 <div class="card-btn">
                     <a href="#" class="card-btn-link"><button class="btn">Agregar al Carrito</button></a>
@@ -124,5 +124,6 @@ require_once "config/conect.php";
             <a href="">WhatsApp</a>
         </div>
     </footer>
-</body>
+
+</body> 
 </html>

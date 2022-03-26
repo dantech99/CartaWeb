@@ -79,6 +79,8 @@ if (isset($_POST)) {
             <div class="factory_header">
                 <h1>Datos de Le empresa</h1>
                 <a href="#" class="factory_btn" id="btnModal">Editar</a>
+                
+
             </div>
 
                 <div class="factory_body">
@@ -156,12 +158,13 @@ if (isset($_POST)) {
             <div class="factory_body_content">
                 <h4><?php echo $data['info_web']; ?></h4>
             </div>
-            <?php } ?>
+          
         </div>
     </div>
     </div>
 
     <div id="myModal" class="modalContainer">
+   
     <div class="modal-content">
         <span class="close">x</span>
         <h2>Mi modal</h2>
@@ -173,44 +176,46 @@ if (isset($_POST)) {
                 <div class="form-flex-one">
                     <label for="file-2">Imagen Logo</label>
                     <input type="file" name="imagen_dash" id="imagen_dash" class="file-input">
+                    <img src="../assets/img/<?php echo $data['imagen_dash']; ?>" alt="" style="width:300px;">
                 </div>
                 </div>
 
 
                 <div class="form-text">
                     <label for="nombre">Nombre/Titulo de la empresa</label>
-                    <input type="text" name="nombre_e" id="nombre">
+                    <input type="text" name="nombre_e" id="nombre" value="<?php echo $data['nombre_e']; ?>">
                 </div>
                 <div class="form-text">
                     <label for="nombre">Propietario</label>
-                    <input type="text" name="propietario" id="nombre">
+                    <input type="text" name="propietario" id="nombre" value="<?php echo $data['propietario']; ?>">
                 </div>
 
                 <div class="form-flex">
                     <div class="form-flex-one">
                         <label for="file-2">Descripcion</label>
-                        <textarea name="descripcion" id="descripcion" cols="50" rows="10" ></textarea>
+                        <textarea name="descripcion" id="descripcion" cols="50" rows="10" ><?php echo $data['descripcion']; ?></textarea>
                     </div>
                     </div>
     
     
                     <div class="form-text">
                         <label for="nombre">NombreWeb</label>
-                        <input type="text" name="nombreweb" id="nombre">
+                        <input type="text" name="nombreweb" id="nombre" value="<?php echo $data['nombreweb']; ?>">
                     </div>
                     <div class="form-text">
                         <label for="nombre">Header Text</label>
-                        <input type="text" name="info_web" id="nombre">
+                        <input type="text" name="info_web" id="nombre" value="<?php echo $data['info_web']; ?>">
                     </div>
                     <div class="form-btn">
                        <button class="submit">registrar</button>
-                        <a href="#">Cancelar</a>
+                       <button onclick="window.location.href='settings.php'">cerrar</button>
+                        
                     </div>
             </form>
         </div>
     </div>
 </div>
-
+<?php } ?>
     <script src="../assets/js/modal.js"></script>
     
 </body>
