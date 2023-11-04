@@ -34,13 +34,13 @@ require_once "config/conect.php";
 
     <!-- navegacion principal encabezado -->
     <header class="header">
-    <?php 
+    <!-- <?php 
             $query = mysqli_query($conexion, "SELECT * FROM configuracion ORDER BY id DESC");
             $data = mysqli_fetch_assoc($query);
             if ($query) {
                 
             
-            ?>
+            ?> -->
         <nav class="nav">
            <a href="admin/index.php" class="logo"><?php echo $data['nombre_e']; ?></a>
            <button class="toggle"><i class='bx bx-menu'></i></button>
